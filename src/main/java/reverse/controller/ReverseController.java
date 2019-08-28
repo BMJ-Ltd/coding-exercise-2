@@ -43,7 +43,6 @@ public class ReverseController {
 	@ResponseBody
 	public List<String> filter(@RequestBody final List<Integer> words)
 	{
-		return words;
+		return null;
 	}
-
 }
