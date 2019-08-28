@@ -1,0 +1,103 @@
+{
+	"info": {
+		"_postman_id": "e239e6d5-3188-47db-97fb-b8d8e566512c",
+		"name": "Coding Exercise 2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "reverse",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\"orange\", \"apple\", \"radar\", \"guacamole\", \"madam\", \"acid\", \"astrology\", \"the bmj\", \"\", null]"
+				},
+				"url": {
+					"raw": "http://localhost:8080/reverse",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"reverse"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "intpalindrome",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\"121\", \"123\", \"45678\", \"4545\", \"8763678\", \"987\", \"2344\", \"55627\", \"8\", null]"
+				},
+				"url": {
+					"raw": "http://localhost:8080/intpalindrome",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"palindrome"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "commasep",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\"121\", \"123\", \"45678\", \"4545\", \"8763678\", \"987\", \"2344\", \"55627\", \"8\", null]"
+				},
+				"url": {
+					"raw": "http://localhost:8080/commasep",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"filter"
+					],
+					"query": [
+						{
+							"key": "maxWordSize",
+							"value": "5"
+						},
+						{
+							"key": "wordStartsWith",
+							"value": "a"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
