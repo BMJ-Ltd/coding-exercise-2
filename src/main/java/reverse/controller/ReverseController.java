@@ -41,7 +41,7 @@ public class ReverseController {
 	 */
 	@PostMapping(value = "/commasep")
 	@ResponseBody
-	public List<String> filter(@RequestBody final List<Integer> words)
+	public String getCommaSeperatedString(@RequestBody final List<Integer> words)
 	{
 		return null;
 	}
