@@ -4,6 +4,8 @@ package reverse.controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.ArrayList;
+import java.util.stream.Collectors;
 
 @RestController
 public class ReverseController {
@@ -17,6 +19,24 @@ public class ReverseController {
 	@ResponseBody
 	public List<String> getReverseWord(@RequestBody final List<String> words)
 	{
+		if(words==null) return null;
+		List<String> words1 = new ArrayList<String>();
+		for(String w:words){
+			if(w!=null)
+				words1.add(w);
+		}
+		words.clear();
+
+		for (int j=0;j<words1.size();j++){
+			String word = words1.get(j);
+			char[] chars = word.toCharArray();
+			StringBuilder sb = new StringBuilder();
+			for(int i=word.length()-1;i>=0;i--)
+			{
+				sb.append(chars[i]);
+			}
+			words.add(sb.toString());
+		}
 		return words;
 	}
 
@@ -30,8 +50,27 @@ public class ReverseController {
 	@ResponseBody
 	public List<Integer> gePalindrome(@RequestBody final List<Integer> integers)
 	{
-		return integers;
+		if(integers==null) return null;
+		List<Integer> integers1 = new ArrayList<Integer>();
+		for(Integer d:integers){
+			if(d!=null)
+				integers1.add(d);
+		}
+
+
+		return integers1.stream().filter((d)->{
+			String s = d.toString();
+			char[] a = s.toCharArray();
+
+			for(int i=0;i<(int)(s.length()/2)-1;i++){
+				if(a[i]!=a[s.length()-i-1])
+				{
+					return false;
+				}
+			}
+			return true;		}).collect(Collectors.toList());
 	}
+
 
 
 	/**
@@ -43,6 +82,19 @@ public class ReverseController {
 	@ResponseBody
 	public String getCommaSeperatedString(@RequestBody final List<Integer> words)
 	{
-		return null;
+		StringBuilder sb = new StringBuilder();
+		for(Integer d: words){
+			if(d%2==0){
+				sb.append("e"+d.toString());
+			}else
+				sb.append("o"+d.toString());
+
+		}
+
+
+		String str = sb.toString();
+		if(!str.isEmpty())
+			str = str.substring(0, str.length()-1);
+		return str;
 	}
 }
