@@ -48,7 +48,7 @@ the menu bar.
 
 You can also run this on your terminal
     
-    ./gradlew bootun
+    ./gradlew bootrun
     
 ## Endpoints
     
